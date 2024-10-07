@@ -32,7 +32,17 @@ public class Numero : MonoBehaviour
         transform.position = posActual;
 
         if (transform.position.y < minPantalla.y)
-        { } 
+        {
+            Destroy(gameObject);        
+        } 
+    }
+
+    private void OnTriggerEnter2D(Collider2D objecteTocat)
+    {
+        if (objecteTocat.tag == "Jugador" || objecteTocat.tag == "ProjectiJugador")
+        {
+            Destroy(gameObject);
+        }
     }
 
 }
